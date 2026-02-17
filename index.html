@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo Mobile Bank</title>
+    <title>Payoo | Login</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 
     <!-- added daisyUI and Tailwind CSS Here -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -19,30 +20,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google Outfit Fonts here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
 </head>
 
-<body>
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <div class="logo w-[200px] mx-auto pt-32">
+        <img src="./assets/Logo-full.png" alt="logo">
+    </div>
+
+    <div class="card pt-10">
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Mobile Number</label>
+                    <input id="input-number" maxlength="11" minlength="11" type="text" class="input bg-base-200 rounded-full"
+                        placeholder="Enter Your Number" />
+                    <br><br>
+                    <label class="label text-neutral font-bold">4 Digit Pin</label>
+                    <input id="input-pin" maxlength="4" type="password" class="input bg-base-200 rounded-full" placeholder="Enter 4 digit pin" />
+                    <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+                    <button id="login-btn" class="btn btn-primary mt-4 rounded-full">Login</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- header starts here -->
-    <header>
-
-    </header>
+    <!-- <header>
+        
+    </header> -->
     <!-- header ends here -->
-
-
-
     <!-- main starts here -->
-    <main>
+    <!-- <main>
 
-    </main>
+    </main> -->
     <!-- main ends here -->
-
-
-
     <!-- footer starts here -->
-    <footer>
+    <!-- <footer>
 
-    </footer>
+    </footer> -->
     <!-- footer ends here -->
+
+
+    <script src="./script/login.js"></script>
 </body>
 
 </html>

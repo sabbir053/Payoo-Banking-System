@@ -1,0 +1,16 @@
+// console.log("test login js file")
+
+document.getElementById('login-btn').addEventListener('click', () => {
+    const numberInput = document.getElementById('input-number');
+    const inputNumberValue = numberInput.value;
+
+    const pinInput = document.getElementById('input-pin');
+    const inputPinValue = pinInput.value;
+
+    if (inputNumberValue == '01734521053' && inputPinValue == '5479') {
+        window.location.assign('/home.html');
+    } else {
+        alert("Wrong | Number or Password -- Please Try a correct value.");
+        return;
+    }
+})
