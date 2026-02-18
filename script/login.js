@@ -6,7 +6,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
     const inputPinValue = pinInput.value.trim();
 
     if (inputNumberValue == '01734521053' && inputPinValue == '5479') {
-        window.location.assign('./home.html');
+        window.location.assign('./Payoo-Banking-System/home.html');
     } else {
         alert("Wrong | Number or Password -- Please Try a correct value.");
         return;
