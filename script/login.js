@@ -1,11 +1,9 @@
-// console.log("test login js file")
-
 document.getElementById('login-btn').addEventListener('click', () => {
     const numberInput = document.getElementById('input-number');
-    const inputNumberValue = numberInput.value;
+    const inputNumberValue = numberInput.value.trim();
 
     const pinInput = document.getElementById('input-pin');
-    const inputPinValue = pinInput.value;
+    const inputPinValue = pinInput.value.trim();
 
     if (inputNumberValue == '01734521053' && inputPinValue == '5479') {
         window.location.assign('/home.html');
