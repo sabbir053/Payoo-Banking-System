@@ -45,27 +45,29 @@
         <p class="text-neutral/50 text-justify">Enjoy easy and convenient financial services with us. Cashout charge is
             low and your money is always safe with us.</p>
         <div class="buttons grid grid-cols-3 gap-3">
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('add-money')" class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('cash-out')" class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cash Out</p>
             </button>
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('transfer-money')"
+                class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('bonus-coupon')" class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('pay-bill')" class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('transaction-history')"
+                class="btn flex-col rounded-md h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transaction</p>
             </button>
@@ -73,7 +75,7 @@
     </section>
 
 
-    <section id="add-money" class="w-11/12 mx-auto py-5">
+    <section id="add-money" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="text-xl font-bold py-5">Add Money</h2>
         <div class="card bg-base-100 w-full shadow rounded-2xl">
             <div class="card-body">
@@ -108,7 +110,7 @@
     </section>
 
 
-    <section id="cash-out" class="w-11/12 mx-auto py-5">
+    <section id="cash-out" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="text-xl font-bold py-5">Cash Out</h2>
         <div class="card bg-base-100 w-full shadow rounded-2xl">
             <div class="card-body">
@@ -132,11 +134,156 @@
         </div>
     </section>
 
+    <section id="transfer-money" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold py-5">Transfer Money</h2>
+        <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">User Account Number</label>
+                    <input id="user-account-number" maxlength="11" minlength="11" type="text"
+                        class="input bg-base-200 rounded-full w-full" placeholder="Enter 11 Digit Number" />
+
+                    <br><br>
+                    <label class="label text-neutral font-bold">Amount</label>
+                    <input id="transfer-amount" type="number" class="input bg-base-200 rounded-full w-full"
+                        placeholder="Enter Amount to Transfer" />
+
+                    <br><br>
+                    <label class="label text-neutral font-bold">Pin Number</label>
+                    <input id="transfer-pin" maxlength="4" type="password" class="input bg-base-200 rounded-full w-full"
+                        placeholder="Enter 4 Digit Pin Number" />
+                    <button id="transfer-btn" class="btn btn-primary mt-4 rounded-full">Send Now</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="bonus-coupon" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold py-5">Get Bonus</h2>
+        <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Enter Bonus Coupon</label>
+                    <input id="bonus-coupon" maxlength="11" minlength="11" type="text"
+                        class="input bg-base-200 rounded-full w-full" placeholder="Enter Your Bonus Coupon" />
+                    <br><br>
+
+                    <button id="bonus-btn" class="btn btn-primary mt-4 rounded-full">Get Bonus</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="pay-bill" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold py-5">Pay Bill</h2>
+        <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+                    <label class="label text-neutral font-bold">Select to Pay</label>
+                    <select id="select-pay-bill" class="select w-full bg-base-200 rounded-full">
+                        <option disabled selected>Select Payment Type</option>
+                        <option value="DBBL">DBBL</option>
+                        <option value="IFIC">IFIC</option>
+                        <option value="CITY">City Bank</option>
+                    </select>
+                    <br><br>
+
+                    <label class="label text-neutral font-bold">Biller Account Number</label>
+                    <input id="pay-bill-acc-number" maxlength="11" minlength="11" type="text"
+                        class="input bg-base-200 rounded-full w-full" placeholder="Enter Account Number" />
+
+                    <br><br>
+                    <label class="label text-neutral font-bold">Amount To Pay</label>
+                    <input id="pay-bill-amount" type="number" class="input bg-base-200 rounded-full w-full"
+                        placeholder="Add Amount to Pay" />
+
+                    <br><br>
+                    <label class="label text-neutral font-bold">Pin Number</label>
+                    <input id="pay-bill-pin" maxlength="4" type="password" class="input bg-base-200 rounded-full w-full"
+                        placeholder="Enter 4 Digit Pin Number" />
+                    <button id="pay-bill-btn" class="btn btn-primary mt-4 rounded-full">Pay Now</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="transaction-history" class="w-11/12 mx-auto py-5 hidden space-y-5">
+        <div class="flex justify-between items-center">
+            <h2 class="text-xl font-bold py-5">Transaction History</h2>
+            <p class="text-neutral/50">view all</p>
+        </div>
+
+        <div class="card bg-base-100 rounded-2xl shadow p-4">
+            <div class="flex items-center">
+                <div class="flex items-center gap-4">
+                    <div class="p-2 rounded-full bg-gray-200/50">
+                        <img src="./assets/opt-1.png" class="w-8" alt="">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Electricity Bill</h2>
+                        <p class="text-neutral/50 text-sm">Today 01:44 AM</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical ml-auto cursor-pointer"></i>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 rounded-2xl shadow p-4">
+            <div class="flex items-center">
+                <div class="flex items-center gap-4">
+                    <div class="p-2 rounded-full bg-gray-200/50">
+                        <img src="./assets/opt-1.png" class="w-8" alt="">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Bank Deposit</h2>
+                        <p class="text-neutral/50 text-sm">Today 01:44 AM</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical ml-auto cursor-pointer"></i>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 rounded-2xl shadow p-4">
+            <div class="flex items-center">
+                <div class="flex items-center gap-4">
+                    <div class="p-2 rounded-full bg-gray-200/50">
+                        <img src="./assets/opt-1.png" class="w-8" alt="">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Mobile Recharge</h2>
+                        <p class="text-neutral/50 text-sm">Today 01:44 AM</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical ml-auto cursor-pointer"></i>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 rounded-2xl shadow p-4">
+            <div class="flex items-center">
+                <div class="flex items-center gap-4">
+                    <div class="p-2 rounded-full bg-gray-200/50">
+                        <img src="./assets/opt-1.png" class="w-8" alt="">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Gas Bill</h2>
+                        <p class="text-neutral/50 text-sm">Today 01:44 AM</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical ml-auto cursor-pointer"></i>
+            </div>
+        </div>
+    </section>
 
 
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/transfer.js"></script>
 </body>
 
 </html>
